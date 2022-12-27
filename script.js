@@ -12,10 +12,9 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu','Kesariya','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye', 'Beche Thakar Gaan'];
-
+const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan'];
 // Keep track of song
-let songIndex = 6;
+let songIndex = songs.length-1;
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
