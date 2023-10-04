@@ -9,11 +9,9 @@
 }
 
 body {
-  background-image: linear-gradient(
-    0deg,
-    rgba(247, 247, 247, 1) 23.8%,
-    rgba(252, 221, 221, 1) 92%
-  );
+  background-image: linear-gradient(0deg,
+      rgba(247, 247, 247, 1) 23.8%,
+      rgba(252, 221, 221, 1) 92%);
   min-height: 100vh;
   height: 100vh;
   display: flex;
@@ -25,7 +23,7 @@ body {
 }
 
 
-.logo-content{
+.logo-content {
   position: relative;
   padding: 20px 30px;
 }
@@ -54,41 +52,38 @@ body {
 }
 
 @keyframes animate {
+
   0%,
   100% {
-    clip-path: polygon(
-      0% 45%,
-      16% 44%,
-      33% 50%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
+    clip-path: polygon(0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%);
   }
 
   50% {
-    clip-path: polygon(
-      0% 60%,
-      15% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
+    clip-path: polygon(0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%);
   }
 }
 
-.tagline{
+.tagline {
   font-family: 'Marck Script', cursive;
   font-size: 20px;
   padding: 0 80px;
-  color:rgba(188, 29, 23, 0.779);
+  color: rgba(188, 29, 23, 0.779);
 }
 
 
@@ -212,4 +207,11 @@ body {
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  font-size: .85rem;
 }
