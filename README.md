@@ -39,6 +39,22 @@ Our primary focus? Providing an inviting gateway for beginners itching to contri
 
 ![Hacktoberfest23](https://github.com/Hackerspace2023/HackerSpace/blob/main/public/hacktoberfest_logo.png)
 
+## ❤️ Project Admin
+
+<table>
+	<tr>
+		<td align="center">
+			<a href="https://github.com/samratghosh291">
+				<img src="https://avatars0.githubusercontent.com/u/57909583?v=4" width="100px" alt="" />
+				<br /> <sub><b>Samrat Ghosh</b></sub>
+			</a>
+			<br /> <a href="https://github.com/samratghosh291"> 
+		👑 Admin
+	    </a>
+		</td>
+	</tr>
+</table>
+
 # Contributors
 ![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia-music-player)
 
