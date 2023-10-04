@@ -45,7 +45,7 @@ Our primary focus? Providing an inviting gateway for beginners itching to contri
 	<tr>
 		<td align="center">
 			<a href="https://github.com/samratghosh291">
-				<img src="https://avatars0.githubusercontent.com/u/57909583?v=4" width="100px" alt="" />
+				<img src="https://github.com/samratghosh291/Musicia-music-player/blob/main/images/Project_Admin.jpg" width="100px" alt="" />
 				<br /> <sub><b>Samrat Ghosh</b></sub>
 			</a>
 			<br /> <a href="https://github.com/samratghosh291"> 
