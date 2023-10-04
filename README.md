@@ -29,9 +29,9 @@ Our primary focus? Providing an inviting gateway for beginners itching to contri
 <a href="https://github.com/samratghosh291/Musicia-music-player/stargazers"><img src="https://img.shields.io/github/stars/samratghosh291/Musicia-music-player"></a>
 <a href="https://github.com/samratghosh291/Musicia-music-player/blob/master/LICENSE"><img src="https://img.shields.io/github/license/samratghosh291/Musicia-music-player"></a>
 
-<img src="https://github.com/Hackerspace2023/HackerSpace/blob/main/public/hackerspace.jpg" width=250 height=250>
+<img src="https://github.com/samratghosh291/Musicia-music-player/blob/main/images/Logo.png" width=250 height=250>
 
-<h3>Join official <a href="https://discord.gg/6mGFdkWxux">Discord Channel</a> for discussion</h3>
+<h3>Join official <a href="https://discord.gg/3TB4MSh3yV">Discord Channel</a> for discussion</h3>
 
 <br>
 
