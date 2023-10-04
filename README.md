@@ -3,6 +3,13 @@
 
 A web based music player application.
 
+<br>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Welcome+to+Musicia+!;Let's+Build+our+own+Together;Thanks+for+Contributing"
+ <img src= 'https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2.5'/>
+</p>
+<br>
+
 
 ## Tech Stack
 
