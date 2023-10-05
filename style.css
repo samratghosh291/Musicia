@@ -215,3 +215,26 @@ footer {
   text-align: center;
   font-size: .85rem;
 }
+
+input[type="range"]{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #dfdbdf;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -12px;
+  background-color: #fe8daa;
+  height: 2rem;
+  width: 1rem;    
+}
