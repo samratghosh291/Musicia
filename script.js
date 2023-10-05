@@ -160,6 +160,11 @@ playBtn.addEventListener('click', () => {
   }
 });
 
+// Change volume of the Song 
+const setVolume = (volume) => {
+	audio.volume = volume
+}
+
 // Change song
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
