@@ -180,3 +180,36 @@ audio.addEventListener('ended', nextSong);
 
 // Time of song
 audio.addEventListener('timeupdate',DurTime);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('play');
+    const pauseButton = document.getElementById('pause');
+    const timestampElement = document.getElementById('timestamp');
+
+    let isPlaying = false;
+
+    audio.addEventListener('timeupdate', function() {
+        const currentTime = formatTime(audio.currentTime);
+        const duration = formatTime(audio.duration);
+
+        timestampElement.textContent = `${currentTime} / ${duration}`;
+    });
+
+    playButton.addEventListener('click', function() {
+        audio.play();
+        isPlaying = true;
+    });
+
+    pauseButton.addEventListener('click', function() {
+        audio.pause();
+        isPlaying = false;
+    });
+
+    function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+});
+
