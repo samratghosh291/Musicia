@@ -12,7 +12,8 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'faded', 'Beche Thakar Gaan'];
+const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Perfect','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan',
+'Abar-Phire-Ele','Boba-Tunnel','Ei Sraabon','Apna-Bana-Le','Tere Hawaale','Ami shei manushta r nei'];;
 // Keep track of song 
 let songIndex = songs.length - 1;
 
