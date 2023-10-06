@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
@@ -22,6 +24,10 @@ body {
   justify-content: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
+}
+#timestamp {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 header {
@@ -291,6 +297,4 @@ input[type="range"]::-webkit-slider-thumb {
   width: 1rem;    
 }
 
-  font-size: 0.85rem;
-}
 
