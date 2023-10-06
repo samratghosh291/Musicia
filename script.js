@@ -12,10 +12,10 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Perfect','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan',
-'Abar-Phire-Ele','Boba-Tunnel','Ei Sraabon','Apna-Bana-Le','Tere Hawaale','Ami shei manushta r nei'];
+const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'faded', 'Beche Thakar Gaan',
+  'Abar-Phire-Ele', 'Boba-Tunnel', 'Ei Sraabon', 'Apna-Bana-Le', 'Tere Hawaale', 'Ami shei manushta r nei'];
 // Keep track of song
-let songIndex = songs.length-1;
+let songIndex = songs.length - 1;
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
@@ -88,66 +88,66 @@ function setProgress(e) {
 }
 
 //get duration & currentTime for Time of song
-function DurTime (e) {
-	const {duration,currentTime} = e.srcElement;
-	var sec;
-	var sec_d;
+function DurTime(e) {
+  const { duration, currentTime } = e.srcElement;
+  var sec;
+  var sec_d;
 
-	// define minutes currentTime
-	let min = (currentTime==null)? 0:
-	 Math.floor(currentTime/60);
-	 min = min <10 ? '0'+min:min;
+  // define minutes currentTime
+  let min = (currentTime == null) ? 0 :
+    Math.floor(currentTime / 60);
+  min = min < 10 ? '0' + min : min;
 
-	// define seconds currentTime
-	function get_sec (x) {
-		if(Math.floor(x) >= 60){
-			
-			for (var i = 1; i<=60; i++){
-				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
-					sec = Math.floor(x) - (60*i);
-					sec = sec <10 ? '0'+sec:sec;
-				}
-			}
-		}else{
-		 	sec = Math.floor(x);
-		 	sec = sec <10 ? '0'+sec:sec;
-		 }
-	} 
+  // define seconds currentTime
+  function get_sec(x) {
+    if (Math.floor(x) >= 60) {
 
-	get_sec (currentTime,sec);
+      for (var i = 1; i <= 60; i++) {
+        if (Math.floor(x) >= (60 * i) && Math.floor(x) < (60 * (i + 1))) {
+          sec = Math.floor(x) - (60 * i);
+          sec = sec < 10 ? '0' + sec : sec;
+        }
+      }
+    } else {
+      sec = Math.floor(x);
+      sec = sec < 10 ? '0' + sec : sec;
+    }
+  }
 
-	// change currentTime DOM
-	currTime.innerHTML = min +':'+ sec;
+  get_sec(currentTime, sec);
 
-	// define minutes duration
-	let min_d = (isNaN(duration) === true)? '0':
-		Math.floor(duration/60);
-	 min_d = min_d <10 ? '0'+min_d:min_d;
+  // change currentTime DOM
+  currTime.innerHTML = min + ':' + sec;
+
+  // define minutes duration
+  let min_d = (isNaN(duration) === true) ? '0' :
+    Math.floor(duration / 60);
+  min_d = min_d < 10 ? '0' + min_d : min_d;
 
 
-	 function get_sec_d (x) {
-		if(Math.floor(x) >= 60){
-			
-			for (var i = 1; i<=60; i++){
-				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
-					sec_d = Math.floor(x) - (60*i);
-					sec_d = sec_d <10 ? '0'+sec_d:sec_d;
-				}
-			}
-		}else{
-		 	sec_d = (isNaN(duration) === true)? '0':
-		 	Math.floor(x);
-		 	sec_d = sec_d <10 ? '0'+sec_d:sec_d;
-		 }
-	} 
+  function get_sec_d(x) {
+    if (Math.floor(x) >= 60) {
 
-	// define seconds duration
-	
-	get_sec_d (duration);
+      for (var i = 1; i <= 60; i++) {
+        if (Math.floor(x) >= (60 * i) && Math.floor(x) < (60 * (i + 1))) {
+          sec_d = Math.floor(x) - (60 * i);
+          sec_d = sec_d < 10 ? '0' + sec_d : sec_d;
+        }
+      }
+    } else {
+      sec_d = (isNaN(duration) === true) ? '0' :
+        Math.floor(x);
+      sec_d = sec_d < 10 ? '0' + sec_d : sec_d;
+    }
+  }
 
-	// change duration DOM
-	durTime.innerHTML = min_d +':'+ sec_d;
-		
+  // define seconds duration
+
+  get_sec_d(duration);
+
+  // change duration DOM
+  durTime.innerHTML = min_d + ':' + sec_d;
+
 };
 
 // Event listeners
@@ -163,7 +163,7 @@ playBtn.addEventListener('click', () => {
 
 // Change volume of the Song 
 const setVolume = (volume) => {
-	audio.volume = volume
+  audio.volume = volume
 }
 
 // Change song
@@ -180,37 +180,36 @@ progressContainer.addEventListener('click', setProgress);
 audio.addEventListener('ended', nextSong);
 
 // Time of song
-audio.addEventListener('timeupdate',DurTime);
+audio.addEventListener('timeupdate', DurTime);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('audio');
-    const playButton = document.getElementById('play');
-    const pauseButton = document.getElementById('pause');
-    const timestampElement = document.getElementById('timestamp');
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('audio');
+  const playButton = document.getElementById('play');
+  const timestampElement = document.getElementById('timestamp');
 
-    let isPlaying = false;
+  let isPlaying = false;
 
-    audio.addEventListener('timeupdate', function() {
-        const currentTime = formatTime(audio.currentTime);
-        const duration = formatTime(audio.duration);
+  audio.addEventListener('timeupdate', function () {
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
 
-        timestampElement.textContent = `${currentTime} / ${duration}`;
-    });
+    timestampElement.textContent = `${currentTime} / ${duration}`;
+  });
 
-    playButton.addEventListener('click', function() {
-        audio.play();
-        isPlaying = true;
-    });
-
-    pauseButton.addEventListener('click', function() {
-        audio.pause();
-        isPlaying = false;
-    });
-
-    function formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  playButton.addEventListener('click', function () {
+    if (isPlaying == true) {
+      audio.pause();
+      isPlaying = false;
     }
-});
+    else {
+      audio.play();
+      isPlaying = true;
+    }
+  });
 
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+});

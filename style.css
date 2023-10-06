@@ -79,6 +79,14 @@ header .user {
   color: rgba(188, 29, 23, 0.779);
 }
 
+.usr{
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: rgba(188, 29, 23, 0.779);
+}
+
 .logo-content {
   position: relative;
   padding: 20px 30px;
@@ -180,7 +188,7 @@ header .user {
   width: inherit;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: -6px;
   animation: rotate 3s linear infinite;
 
   animation-play-state: paused;
@@ -205,6 +213,7 @@ header .user {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
 .action-btn {
@@ -297,4 +306,153 @@ input[type="range"]::-webkit-slider-thumb {
   width: 1rem;    
 }
 
+/* Mobile-first styles */
+@media (max-width: 768px) {
+  /* Header styles for smaller screens */
+  header {
+      align-items: center;
+      padding: 10px;
+  }
+  header .user{
+    display: none;
+  }
+  .usr{
+    display: block !important;
+  }
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  /* Logo and tagline styles for smaller screens */
+  .logo-content {
+      padding: 10px;
+  }
+
+  .content h2 {
+      font-size: 24px;
+  }
+
+  .tagline {
+      font-size: 20px;
+  }
+
+  #timestamp{
+    font-size: 0.7rem;
+  }
+
+  #currTime{
+    margin-left: 3rem;
+    font-size: 0.7rem;
+  }
+
+  #durTime{
+    font-size: 0.7rem;
+  }
+
+  /* Image container styles for smaller screens */
+  .img-container {
+      width: 60px;
+  }
+
+  .img-container img {
+      height: 60px;
+  }
+  
+  .music-container{
+      margin: 2rem;
+      padding: 0 1rem 1rem 1rem;
+  }
+
+  /* Navigation styles for smaller screens */
+
+  .action-btn {
+      font-size: 16px;
+      padding: 8px;
+      margin: 0 10px;
+  }
+
+  .action-btn.action-btn-big {
+      font-size: 24px;
+  }
+
+  /* Music info styles for smaller screens */
+  .music-info {
+      padding: 10px;
+  }
+
+  /* Progress container styles for smaller screens */
+  .progress-container {
+      margin: 5px 0;
+  }
+
+  /* Footer styles for smaller screens */
+  footer {
+      font-size: 10px;
+  }
+}
+
+/* Hamburger menu styles for small screens */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: rgba(188, 29, 23, 0.779);
+  margin: 3px 0;
+}
+
+/* Show navigation links as a dropdown when the screen size is small */
+@media (max-width: 768px) {
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff; /* Background color for the dropdown */
+    border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for the dropdown */
+    position: absolute;
+    top: 65px;
+    left: 0;
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Slide-down and slide-up transition */
+  }
+
+  .nav-container.show-nav {
+    display: flex;
+    max-height: 250px; 
+    padding-bottom: 1rem;
+    transition: max-height 0.4s ease; /* Slide-down and slide-up transition */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: rgba(188, 29, 23, 0.779); 
+    text-decoration: none;
+    padding: 10px 20px; /* Padding for each link */
+    transition: background-color 1s ease; /* Smooth background color transition */
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(188, 29, 23, 0.2); /* Background color on hover */
+    text-decoration: none;
+  }
+}
 
