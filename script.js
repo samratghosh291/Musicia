@@ -20,11 +20,29 @@ let songIndex = songs.length - 1;
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
 
+// Check if there is a stored songIndex and playback position in localStorage
+const savedIndex = localStorage.getItem('savedSongIndex');
+const savedPosition = localStorage.getItem('playbackPosition');
+
+// If both index and position are found, set them
+if (savedIndex !== null && savedPosition !== null) {
+  songIndex = parseInt(savedIndex);
+  audio.currentTime = parseFloat(savedPosition);
+}
+
+// Play the initial song in the background
+pauseSong();
+
 // Update song details
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+}
+
+// Save current song to localStorage
+function saveCurrentSong() {
+  localStorage.setItem('currentSong', JSON.stringify({ song: songs[songIndex] }));
 }
 
 // Play song
@@ -34,6 +52,15 @@ function playSong() {
   playBtn.querySelector('i.fas').classList.add('fa-pause');
 
   audio.play();
+
+  // Save current song to localStorage
+  saveCurrentSong();
+}
+
+// Save playback position when pausing or changing songs
+function savePlaybackPosition() {
+  localStorage.setItem('playbackPosition', audio.currentTime.toString());
+  localStorage.setItem('savedSongIndex', songIndex.toString());
 }
 
 // Pause song
@@ -43,6 +70,9 @@ function pauseSong() {
   playBtn.querySelector('i.fas').classList.remove('fa-pause');
 
   audio.pause();
+
+  // Save playback position when pausing
+  savePlaybackPosition();
 }
 
 // Previous song
@@ -177,7 +207,11 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 
 // Song ends
-audio.addEventListener('ended', nextSong);
+audio.addEventListener('ended', () => {
+  nextSong();
+  // Save playback position when changing songs
+  savePlaybackPosition();
+});
 
 // Time of song
 audio.addEventListener('timeupdate', DurTime);
@@ -211,5 +245,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+});
+
+
+// Listen for page visibility change
+document.addEventListener('visibilitychange', () => {
+  // If the page becomes hidden, save the playback position
+  if (document.visibilityState === 'hidden') {
+    savePlaybackPosition();
   }
 });
