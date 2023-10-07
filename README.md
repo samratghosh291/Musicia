@@ -78,7 +78,7 @@ Join Offical [Discord Channel](https://discord.gg/3TB4MSh3yV) for discussion
 
 # Contributors
 
-![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia-music-player)
+![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia&lastUpdate=37676)
 
 <div align="center">
 <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="40" height="40" /><font size="6">Tech Stack</font></h2>
