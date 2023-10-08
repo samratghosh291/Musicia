@@ -16,7 +16,7 @@
 git clone https://github.com/samratghosh291/Musicia.git
 ```
 
-3. change the present working directory
+4. change the present working directory
 
 ```markdown
 cd Musicia
