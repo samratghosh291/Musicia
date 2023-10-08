@@ -8,14 +8,34 @@
 
 **How to Contribute:**
 - Star ⭐ the repository (Optional).
-1. Fork the repository.
-2. Clone your fork to your local machine. <br> ` git clone <URL> `
-3. Create a new branch for your contribution. <br> ` git checkout -b <Branch name> `
-4. Make changes, commit them, and push them to your fork. 
-5. Create a pull request to the main repository's `main` branch.
-6. Follow our [Contribution Guidelines](CONTRIBUTING.md).
+1. Fork the repository (Click the Fork button in the top right of this page)
+2. Clone the forked repository to your local machine.
+3. Create a New Branch.
+
+```markdown
+git clone https://github.com/samratghosh291/Musicia.git
+```
+
+3. change the present working directory
+
+```markdown
+cd Musicia
+```
+
+5. Make your changes
+
+```markdown
+git add .
+git commit -m "Your commit Message"
+git push origin branch-name
+```
+
+6. Create a pull request to the main repository's `main` branch.
+7. Follow our [Contribution Guidelines](CONTRIBUTING.md).
 
 **Code Style:**
 - Follow the coding style and guidelines used in the project.
 
 Thank you for contributing to Course Manager!
+
+### Happy coding 🚀
