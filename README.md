@@ -5,7 +5,7 @@
 ### A web based music player application.
 
 <div >
-
+<h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="40" height="40" /><font size="6">Tech Stack</font></h2>
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"><img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white"></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black"></a>
 <a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=black"></a>
@@ -35,11 +35,48 @@ Our primary focus? Providing an inviting gateway for beginners itching to contri
 
 ## Installation
 
-- Clone the repo from github
+### 1. Star
+Click the "Star" button at the top right of the repository page on GitHub to show your appreciation for the project.
 
-       git clone 'https://github.com/samratghosh291/Musicia-music-player'
+### 2. Fork the repository:
+Click the "Fork" button at the top right of the repository page on GitHub. This will create a copy of the repository in your own GitHub account.
 
-- Open the `index.html` file in your favorite to run
+### 3. Clone the forked repository to your local machine using the following command:
+```bash
+git clone https://github.com/your-username/Musicia.git
+```
+> Replace your-username with your GitHub username.
+
+### 4. Create a branch
+Make a meaningful name for your new branch, and then create and switch to it using this command:
+```
+git checkout -b new-branch-name
+```
+### 5. Make Changes
+Make the necessary changes or customizations to the code as needed.
+
+After making your changes, you need to stage the changes for commit using the git add command. To stage all changes, use:
+```
+git add .
+```
+Commit your staged changes with a descriptive commit message that explains the purpose of your changes. Use the git commit command:
+```
+git commit -m "Your descriptive commit message here"
+```
+
+Push Your Changes:
+```
+git push origin your-branch-name
+```
+
+Now sumbit the Pull request
+
+### To open it in your local computer. <br>
+`clone the repo`:
+```
+ git clone 'https://github.com/samratghosh291/Musicia-music-player'
+```
+and then Open the `index.html` file in your favorite web browser 
 
 ## Usage
 
@@ -78,10 +115,6 @@ Join Offical [Discord Channel](https://discord.gg/3TB4MSh3yV) for discussion
 
 # Contributors
 
-![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia-music-player)
+![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia&lastUpdate=37676)
 
-<div align="center">
-<h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="40" height="40" /><font size="6">Tech Stack</font></h2>
 
-<br>
-</div>

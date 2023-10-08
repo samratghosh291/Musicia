@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
 
-    <title>Musica</title>
-  </head>
-  <body>
-    <!-- for header  -->
-    <header class="">
-      <div class="logo">MUSICA</div>
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <a href="#">
-              <i class="fas fa-home"></i>
-              Home</a
-            >
-          </li>
-          <li>
-            <a href="assets/mysongs.html">
-              <i class="fas fa-solid fa-star"></i>
-              My Songs</a
-            >
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-solid fa-heart"></i>
-              Liked Song</a
-            >
-          </li>
-        </ul>
-      </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Musica</title>
+</head>
 
-      <div class="user">
-        <i class="fas fa-solid fa-user"></i>
-        <i class="fas fa-sign-out-alt"></i>
-      </div>
-    </header>
 
-    <!-- logo -->
-    <div class="logo-content">
-      <div class="content">
-        <h2>MUSICA!</h2>
-        <h2>MUSICA!</h2>
-      </div>
-      <h3 class="tagline">enjoy your day...</h3>
+<body>
+  <!-- for header -->
+  <header class="">
+    <div class="logo">MUSICA</div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li>
+          <a href="#">
+            <i class="fas fa-home"></i>
+            Home</a>
+        </li>
+        <li>
+          <a href="./assets/mysongs.html">
+            <i class="fas fa-solid fa-star"></i>
+            My Songs</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-solid fa-heart"></i>
+            Liked Song</a>
+        </li>
+        <li class="usr">
+          <div>
+            <i class="fas fa-solid fa-user"></i>
+            <i class="fas fa-sign-out-alt"></i>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="user">
+      <i class="fas fa-solid fa-user"></i>
+      <i class="fas fa-sign-out-alt"></i>
     </div>
 
-    <div class="music-container" id="music-container">
-      <div class="music-info">
-        <h4 id="title"></h4>
-        <div class="progress-container" id="progress-container">
-          <div class="progress" id="progress"></div>
-          <span id="currTime"></span> / <span id="durTime"></span>
-        </div>
-      </div>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
 
-      <audio src="music/ukulele.mp3" id="audio"></audio>
+  <!-- logo -->
+  <div class="logo-content">
+    <div class="content">
+      <h2>MUSICA!</h2>
+      <h2>MUSICA!</h2>
+    </div>
+    <h3 class="tagline">enjoy your day...</h3>
+  </div>
 
+<<<<<<< HEAD
       <div class="img-container">
         <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
       </div>
@@ -93,7 +92,49 @@
     <footer class="footer2">
       <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
     </footer>
+=======
+  <div class="music-container" id="music-container">
+    <div class="music-info">
+      <h4 id="title"></h4>
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+        <span id="currTime"></span> / <span id="durTime"></span>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <audio src="music/ukulele.mp3" id="audio"></audio>
+
+    <div class="img-container">
+      <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
+    </div>
+    <div class="navigation">
+      <button id="prev" class="action-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-big">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+    </div>
+  </div>
+
+  <!-- for footer -->
+  <footer class="footer2">
+    <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
+  </footer>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navContainer = document.querySelector(".nav-container");
+
+    hamburger.addEventListener("click", () => {
+      navContainer.classList.toggle("show-nav");
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+>>>>>>> 64b3d3a9b358ae70967e862a5e747e7b6f240827
+
 </html>
