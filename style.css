@@ -335,12 +335,6 @@ input[type="range"]::-webkit-slider-thumb {
   width: 1rem;    
 }
 
-<<<<<<< HEAD
-/* Dark Theme */
-body.dark-mode {
-  background: linear-gradient(135deg,#121212,#000000);
-  color: #ffffff;
-=======
 /* Mobile-first styles */
 @media (max-width: 768px) {
   /* Header styles for smaller screens */
@@ -489,7 +483,11 @@ body.dark-mode {
     background-color: rgba(188, 29, 23, 0.2); /* Background color on hover */
     text-decoration: none;
   }
->>>>>>> 64b3d3a9b358ae70967e862a5e747e7b6f240827
+}
+  /* Dark Theme */
+body.dark-mode {
+  background: linear-gradient(135deg,#121212,#000000);
+  color: #ffffff;
 }
 
 body.dark-mode header {

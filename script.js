@@ -213,41 +213,6 @@ audio.addEventListener('ended', () => {
   savePlaybackPosition();
 });
 
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', function () {
-  const body = document.body;
-  const modeToggle = document.getElementById('modeToggle');
-
-  // Check the user's preference from local storage
-  const currentMode = localStorage.getItem('mode');
-  if (currentMode) {
-      body.classList.add(currentMode);
-      updateIcon(currentMode);
-  } else {
-      // Set default mode if not found in local storage
-      body.classList.add('light-mode');
-      updateIcon('light-mode');
-  }
-
-  // Toggle between light and dark mode
-  modeToggle.addEventListener('click', function () {
-      if (body.classList.contains('light-mode')) {
-          body.classList.replace('light-mode', 'dark-mode');
-          localStorage.setItem('mode', 'dark-mode');
-          updateIcon('dark-mode');
-      } else {
-          body.classList.replace('dark-mode', 'light-mode');
-          localStorage.setItem('mode', 'light-mode');
-          updateIcon('light-mode');
-      }
-  });
-
-  // Function to update the icon based on the current mode
-  function updateIcon(mode) {
-    const icon = mode === 'light-mode' ? 'fa-moon' : 'fa-sun';
-    modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
-}
-=======
 // Time of song
 audio.addEventListener('timeupdate', DurTime);
 
@@ -290,5 +255,39 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden') {
     savePlaybackPosition();
   }
->>>>>>> 64b3d3a9b358ae70967e862a5e747e7b6f240827
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const modeToggle = document.getElementById('modeToggle');
+
+  // Check the user's preference from local storage
+  const currentMode = localStorage.getItem('mode');
+  if (currentMode) {
+      body.classList.add(currentMode);
+      updateIcon(currentMode);
+  } else {
+      // Set default mode if not found in local storage
+      body.classList.add('light-mode');
+      updateIcon('light-mode');
+  }
+
+  // Toggle between light and dark mode
+  modeToggle.addEventListener('click', function () {
+      if (body.classList.contains('light-mode')) {
+          body.classList.replace('light-mode', 'dark-mode');
+          localStorage.setItem('mode', 'dark-mode');
+          updateIcon('dark-mode');
+      } else {
+          body.classList.replace('dark-mode', 'light-mode');
+          localStorage.setItem('mode', 'light-mode');
+          updateIcon('light-mode');
+      }
+  });
+
+  // Function to update the icon based on the current mode
+  function updateIcon(mode) {
+    const icon = mode === 'light-mode' ? 'fa-moon' : 'fa-sun';
+    modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
+}
 });

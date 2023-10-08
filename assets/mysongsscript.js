@@ -12,8 +12,8 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Perfect','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan',
-'Abar-Phire-Ele','Boba-Tunnel','Ei Sraabon','Apna-Bana-Le','Tere Hawaale','Ami shei manushta r nei'];;
+const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'faded', 'Beche Thakar Gaan',
+  'Abar-Phire-Ele', 'Boba-Tunnel', 'Ei Sraabon', 'Apna-Bana-Le', 'Tere Hawaale', 'Ami shei manushta r nei'];
 // Keep track of song 
 let songIndex = songs.length - 1;
 
@@ -56,7 +56,7 @@ function playSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
   playBtn.querySelector('i.fas').classList.add('fa-pause');
-  
+
   audio.play();
 }
 
@@ -251,7 +251,14 @@ for (let i in songs) {
   x++;
 }
 
-<<<<<<< HEAD
+// Listen for page visibility change
+document.addEventListener('visibilitychange', () => {
+  // If the page becomes hidden, save the playback position
+  if (document.visibilityState === 'hidden') {
+    savePlaybackPosition();
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.body;
   const modeToggle = document.getElementById('modeToggle');
@@ -259,38 +266,30 @@ document.addEventListener('DOMContentLoaded', function () {
   // Check the user's preference from local storage
   const currentMode = localStorage.getItem('mode');
   if (currentMode) {
-      body.classList.add(currentMode);
-      updateIcon(currentMode);
+    body.classList.add(currentMode);
+    updateIcon(currentMode);
   } else {
-      // Set default mode if not found in local storage
-      body.classList.add('light-mode');
-      updateIcon('light-mode');
+    // Set default mode if not found in local storage
+    body.classList.add('light-mode');
+    updateIcon('light-mode');
   }
 
   // Toggle between light and dark mode
   modeToggle.addEventListener('click', function () {
-      if (body.classList.contains('light-mode')) {
-          body.classList.replace('light-mode', 'dark-mode');
-          localStorage.setItem('mode', 'dark-mode');
-          updateIcon('dark-mode');
-      } else {
-          body.classList.replace('dark-mode', 'light-mode');
-          localStorage.setItem('mode', 'light-mode');
-          updateIcon('light-mode');
-      }
+    if (body.classList.contains('light-mode')) {
+      body.classList.replace('light-mode', 'dark-mode');
+      localStorage.setItem('mode', 'dark-mode');
+      updateIcon('dark-mode');
+    } else {
+      body.classList.replace('dark-mode', 'light-mode');
+      localStorage.setItem('mode', 'light-mode');
+      updateIcon('light-mode');
+    }
   });
 
   // Function to update the icon based on the current mode
   function updateIcon(mode) {
     const icon = mode === 'light-mode' ? 'fa-moon' : 'fa-sun';
     modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
-}
-=======
-// Listen for page visibility change
-document.addEventListener('visibilitychange', () => {
-  // If the page becomes hidden, save the playback position
-  if (document.visibilityState === 'hidden') {
-    savePlaybackPosition();
   }
->>>>>>> 64b3d3a9b358ae70967e862a5e747e7b6f240827
 });
