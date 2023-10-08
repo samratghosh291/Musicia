@@ -213,3 +213,38 @@ for (let i in songs) {
   songList.appendChild(layout);
   x++;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const modeToggle = document.getElementById('modeToggle');
+
+  // Check the user's preference from local storage
+  const currentMode = localStorage.getItem('mode');
+  if (currentMode) {
+      body.classList.add(currentMode);
+      updateIcon(currentMode);
+  } else {
+      // Set default mode if not found in local storage
+      body.classList.add('light-mode');
+      updateIcon('light-mode');
+  }
+
+  // Toggle between light and dark mode
+  modeToggle.addEventListener('click', function () {
+      if (body.classList.contains('light-mode')) {
+          body.classList.replace('light-mode', 'dark-mode');
+          localStorage.setItem('mode', 'dark-mode');
+          updateIcon('dark-mode');
+      } else {
+          body.classList.replace('dark-mode', 'light-mode');
+          localStorage.setItem('mode', 'light-mode');
+          updateIcon('light-mode');
+      }
+  });
+
+  // Function to update the icon based on the current mode
+  function updateIcon(mode) {
+    const icon = mode === 'light-mode' ? 'fa-moon' : 'fa-sun';
+    modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
+}
+});

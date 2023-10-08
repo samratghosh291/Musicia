@@ -47,6 +47,8 @@ header .logo {
   align-items: center;
   gap: 10px;
   font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 3px;
   color: rgba(188, 29, 23, 0.779);
 }
 
@@ -266,12 +268,39 @@ header .user {
   transition: width 0.1s linear;
 }
 
+.theme-button {
+  height: 40px;
+  width: 40px;
+  background: #222;
+  border-radius: 50%;
+  border: 1px solid #fe8daa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.theme-button i {
+  color: #fe8daa;
+  transform: rotate(-30deg);
+}
+
 footer {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0;
   text-align: center;
-
   font-size: .85rem;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(252, 169, 169, 0.6);
+  color: rgba(188, 29, 23, 0.779);
 }
 
 input[type="range"]{
@@ -297,4 +326,69 @@ input[type="range"]::-webkit-slider-thumb {
   width: 1rem;    
 }
 
+/* Dark Theme */
+body.dark-mode {
+  background: linear-gradient(135deg,#121212,#000000);
+  color: #ffffff;
+}
 
+body.dark-mode header {
+  background: #1f1f1f;
+}
+
+body.dark-mode header .logo,
+header .user,
+.nav-links a,
+.tagline {
+  color: #ff0066;
+}
+
+body.dark-mode .content h2:nth-child(1) {
+  -webkit-text-stroke: 2px #ff0066;
+}
+
+body.dark-mode .content h2:nth-child(2) {
+  color: #e09d9d;
+}
+
+body.dark-mode .music-container {
+  background: #1f1f1f;
+  box-shadow: 4px 10px 10px 0 rgba(83, 73, 73, 0.6);
+}
+
+body.dark-mode .img-container img {
+  outline: 2px solid #ff3355;
+  outline-offset: 2px;
+}
+
+body.dark-mode .action-btn {
+  background: #1f1f1f;
+}
+
+body.dark-mode .music-info {
+  background: #2e2e2e;
+}
+
+body.dark-mode .progress-container {
+  background: #aaa;
+}
+
+body.dark-mode .progress {
+  background-color: #ff3355;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-thumb {
+  background: #ff0066;
+}
+
+body.dark-mode .theme-button {
+  background: #ddd;
+}
+
+body.dark-mode .theme-button i {
+  color: #ff3355;
+}
+
+body.dark-mode footer {
+  background: #1f1f1f;
+}

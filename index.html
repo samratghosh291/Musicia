@@ -71,7 +71,6 @@
         <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
       </div>
       <div class="navigation">
-        <div id="timestamp">0:00 / 0:00</div>
         <button id="prev" class="action-btn">
           <i class="fas fa-backward"></i>
         </button>
@@ -83,6 +82,11 @@
         </button>
         <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
       </div>
+    </div>
+
+    <!--Theme Change (Dark/Light)-->
+    <div class="theme-button" id="modeToggle">
+      <i class="fas fa-solid fa-moon" id="toggle-button"></i>
     </div>
 
     <!-- for footer  -->
