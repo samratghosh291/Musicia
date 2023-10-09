@@ -20,6 +20,11 @@ body {
     margin: 0;
 }
 
+#timestamp {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
 header {
     position: absolute;
     top: 0;
@@ -67,6 +72,14 @@ header .logo {
 
 header .user {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: rgba(188, 29, 23, 0.779);
+}
+
+.usr {
+    display: none;
     align-items: center;
     gap: 10px;
     font-size: 20px;
@@ -257,7 +270,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .layout {
-    width: 50vw;
+    min-width: 50vw;
     height: 76px;
     display: grid;
     grid-template-rows: 1fr;
@@ -309,9 +322,163 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: #fff;
 }
 
+/* Mobile-first styles */
+@media (max-width: 768px) {
+
+    /* Header styles for smaller screens */
+    header {
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .user {
+        display: none;
+    }
+
+    .usr {
+        display: block !important;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #login-links {
+        display: none;
+    }
+
+    /* Logo and tagline styles for smaller screens */
+    #timestamp {
+        font-size: 0.7rem;
+    }
+
+    #currTime {
+        font-size: 0.7rem;
+    }
+
+    #durTime {
+        font-size: 0.7rem;
+    }
+
+    /* Image container styles for smaller screens */
+    .img-container {
+        width: 60px;
+    }
+
+    .img-container img {
+        height: 60px;
+    }
+
+    .music-container {
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    /* Navigation styles for smaller screens */
+
+    .action-btn {
+        font-size: 16px;
+        padding: 8px;
+        margin: 0 10px;
+    }
+
+    .action-btn.action-btn-big {
+        font-size: 24px;
+    }
+
+    /* Music info styles for smaller screens */
+    .music-info {
+        padding: 10px;
+    }
+
+    /* Song List style for smaller screen  */
+    .layout{
+        width: 80vw;
+    }
+
+    /* Footer styles for smaller screens */
+    footer {
+        font-size: 10px;
+    }
+}
+
+/* Hamburger menu styles for small screens */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: rgba(188, 29, 23, 0.779);
+    margin: 3px 0;
+}
+
+/* Show navigation links as a dropdown when the screen size is small */
+@media (max-width: 768px) {
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        /* Background color for the dropdown */
+        border-radius: 0 0 15px 15px;
+        /* Rounded corners at the bottom */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Box shadow for the dropdown */
+        position: absolute;
+        top: 65px;
+        left: 0;
+        max-height: 0;
+        z-index: 6;
+        /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        /* Slide-down and slide-up transition */
+    }
+
+    .nav-container.show-nav {
+        display: flex;
+        max-height: 350px;
+        padding-bottom: 1rem;
+        transition: max-height 0.4s ease;
+        /* Slide-down and slide-up transition */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        color: rgba(188, 29, 23, 0.779);
+        text-decoration: none;
+        padding: 10px 20px;
+        /* Padding for each link */
+        transition: background-color 1s ease;
+        /* Smooth background color transition */
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(188, 29, 23, 0.2);
+        /* Background color on hover */
+        text-decoration: none;
+    }
+}
+
 /* Dark Theme */
 body.dark-mode {
-    background: linear-gradient(135deg,#121212,#000000);
+    background: linear-gradient(135deg, #121212, #000000);
     color: #ffffff;
 }
 
@@ -342,7 +509,7 @@ body.dark-mode .music-container {
 body.dark-mode .img-container img {
     outline: 2px solid #ff3355;
     outline-offset: 4px;
-  }
+}
 
 body.dark-mode .action-btn {
     background: #1f1f1f;
@@ -382,12 +549,17 @@ body.dark-mode .layout {
     box-shadow: 0 0;
 }
 
-body.dark-mode .layout:hover{
+body.dark-mode .layout:hover {
     background: #2f2f2f;
     color: #ff0000;
 }
 
-body.dark-mode .layout-head:hover{
+body.dark-mode .layout-head:hover {
+    background: #1f1f1f;
+    color: #ff0066;
+}
+
+body.dark-mode .nav-container {
     background: #1f1f1f;
     color: #ff0066;
 }

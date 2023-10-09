@@ -352,7 +352,9 @@ input[type="range"]::-webkit-slider-thumb {
       flex-direction: column;
       gap: 10px;
   }
-
+  #login-links{
+    display: none;
+  }
   /* Logo and tagline styles for smaller screens */
   .logo-content {
       padding: 10px;
@@ -371,7 +373,6 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   #currTime{
-    margin-left: 3rem;
     font-size: 0.7rem;
   }
 
@@ -389,8 +390,8 @@ input[type="range"]::-webkit-slider-thumb {
   }
   
   .music-container{
-      margin: 2rem;
-      padding: 0 1rem 1rem 1rem;
+      margin-top: 125px;
+      padding: 1rem 1rem 1rem 1rem;
   }
 
   /* Navigation styles for smaller screens */
@@ -408,11 +409,6 @@ input[type="range"]::-webkit-slider-thumb {
   /* Music info styles for smaller screens */
   .music-info {
       padding: 10px;
-  }
-
-  /* Progress container styles for smaller screens */
-  .progress-container {
-      margin: 5px 0;
   }
 
   /* Footer styles for smaller screens */
@@ -449,14 +445,16 @@ input[type="range"]::-webkit-slider-thumb {
     position: absolute;
     top: 65px;
     left: 0;
-    max-height: 0; /* Initially hidden */
+    max-height: 0;
+    z-index: 6;
+    /* Initially hidden */
     overflow: hidden;
     transition: max-height 0.3s ease; /* Slide-down and slide-up transition */
   }
 
   .nav-container.show-nav {
     display: flex;
-    max-height: 250px; 
+    max-height: 350px; 
     padding-bottom: 1rem;
     transition: max-height 0.4s ease; /* Slide-down and slide-up transition */
   }
@@ -549,4 +547,9 @@ body.dark-mode .theme-button i {
 
 body.dark-mode footer {
   background: #1f1f1f;
+}
+
+body.dark-mode .nav-container {
+  background: #1f1f1f;
+  color: #ff0066;
 }

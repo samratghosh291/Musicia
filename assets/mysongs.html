@@ -15,7 +15,7 @@
     <!-- for header  -->
     <header class="">
         <div class="logo">MUSICA</div>
-        <nav>
+        <nav class="nav-container">
             <ul class="nav-links">
                 <li>
                     <a href="../index.html">
@@ -32,22 +32,43 @@
                         <i class="fas fa-solid fa-heart"></i>
                         Liked Song</a>
                 </li>
+                <li class="usr">
+                    <div class="nav-links">
+                      <a href="pages/login.html">
+                        <i class="fas fa-solid fa-user"></i>
+                      </a>
+                      <a href="pages/signup.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                      </a>
+                    </div>
+                  </li>
             </ul>
         </nav>
 
-        <div class="user">
-            <i class="fas fa-solid fa-user"></i>
-            <i class="fas fa-sign-out-alt"></i>
-        </div>
+        <div class="nav-links" id="login-links">
+            <a href="pages/login.html">
+              <i class="fas fa-solid fa-user"></i>
+            </a>
+            <a href="pages/signup.html">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </div>
+      
+          <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
     </header>
 
     
     <div class="music-container" id="music-container">
         <div class="music-info">
             <h4 id="title"></h4>
+            <span id="currTime"></span> / <span id="durTime"></span>
             <div class="progress-container" id="progress-container">
                 <div class="progress" id="progress"></div>
-                <span id="currTime"></span> / <span id="durTime"></span>
+                
             </div>
         </div>
 
@@ -89,6 +110,14 @@
         <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navContainer = document.querySelector(".nav-container");
+    
+        hamburger.addEventListener("click", () => {
+          navContainer.classList.toggle("show-nav");
+        });
+      </script>
     <script src="mysongsscript.js"></script>
 </body>
 
