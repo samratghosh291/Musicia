@@ -8,6 +8,7 @@ body{
 .main{
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background-color: #DAFFFB;
     display: flex;
     justify-content: center;
@@ -15,7 +16,8 @@ body{
 }
 
 .container{
-    width: 30%;
+    max-width: 360px;
+    width: 100%;
     height: 60%;
     background-color: #fff;
     border-radius: 20px;
@@ -53,7 +55,7 @@ body{
 }
 
 input{
-    width: 80%;
+    width: 100%;
     height: 50px;
     outline: none;
     border: 1px solid #DAFFFB;
@@ -69,7 +71,8 @@ input{
   line-height: 30px;
   align-items: center;
   position: relative;
-  max-width: 200px;
+  min-width: 250px;
+  padding-inline: 12px;
 }
 
 .input {
@@ -115,8 +118,9 @@ input{
 }
 
 button{
-    width: 5rem;
-    height: 2rem;
+    width: max-content;
+    padding-inline: 22px;
+    padding-block: 8px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -125,7 +129,7 @@ button{
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
 button:hover{
@@ -142,4 +146,10 @@ button:hover{
     color: #176B87;
     text-decoration: none;
     padding-top: 1rem;
+}
+
+@media (min-width: 772px) {
+    .container {
+        max-width: 380px;;
+    }
 }
