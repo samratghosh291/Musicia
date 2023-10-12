@@ -115,6 +115,9 @@ Join Offical [Discord Channel](https://discord.gg/3TB4MSh3yV) for discussion
 
 # Contributors
 
-![Contributors](https://contrib.rocks/image?repo=samratghosh291/Musicia&lastUpdate=37676)
+<a href="https://github.com/samratghosh291/Musicia/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=samratghosh291/Musicia" />
+</a>
+
 
 
