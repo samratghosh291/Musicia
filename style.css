@@ -32,14 +32,17 @@ body {
 
 header {
   position: absolute;
+ 
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 80px;
-  background: rgba(252, 169, 169, 0.6);
-  padding: 0 30px;
+  background: rgb(44, 44, 43);
+  padding: 0 50px;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 50px;
 }
 
 header .logo {
@@ -47,9 +50,9 @@ header .logo {
   align-items: center;
   gap: 10px;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 3px;
-  color: rgba(188, 29, 23, 0.779);
+  color: white;
 }
 
 .nav-links {
@@ -61,16 +64,51 @@ header .logo {
 
 .nav-links a {
   display: flex;
+  text-decoration: none;
   align-items: center;
   gap: 5px;
   text-decoration: none;
-  color: rgba(188, 29, 23, 0.779);
+  color: white;
   font-size: 1.2rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition:  0.3s linear;
+}
+.nav-links li a{
+  color: white;
+  padding: 5px 10px;
+  transition: 0.3s linear;
+}
+.nav-links li a:hover{
+  border-top: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+  border-radius: 5px;
+  
+}
+.nav-links li a i:hover{
+  color: yellow;
+ 
+}
+
+#login-links a i{
+  color: white;
+  padding: 5px 10px;
+  transition: 0.3s linear;
+}
+#login-links a i:hover{
+  color: yellow;
+  border-top: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+  border-radius: 5px;
+}
+
+
+.nav-links li a i{
+  color: white;
 }
 .nav-links a:hover {
-  text-decoration: underline;
+  scale: 1.1;
+  color: rgb(255, 251, 0);
+  text-decoration: none;
 }
 
 header .user {
@@ -553,3 +591,4 @@ body.dark-mode .nav-container {
   background: #1f1f1f;
   color: #ff0066;
 }
+
