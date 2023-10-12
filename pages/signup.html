@@ -12,12 +12,13 @@
   </head>
   <body>
     <div class="main">
-      <div class="container">
+      <form class="container">
         <div class="signup_container">
           <img src="../images/user-picture.png" alt="logo" class="logo" />
           <span>Sign Up</span>
         </div>
         <div class="input_container">
+          <form action="submit_form.php" method="POST">
           <div class="group">
             <i class="fas fa-solid fa-user icon"></i>
             <input class="input" type="text" placeholder="username" />
@@ -64,8 +65,9 @@
           </div>
         </div>
         <div>
-          <button class="signup_btn">Sign Up</button>
+          <button type="submit" class="signup_btn">Sign Up</button>
         </div>
+      </form>
       </div>
     </div>
   </body>
