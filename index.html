@@ -36,17 +36,23 @@
             Liked Song</a>
         </li>
         <li class="usr">
-          <div>
+          <a href="pages/login.html">
             <i class="fas fa-solid fa-user"></i>
+          </a>
+          <a href="pages/signup.html">
             <i class="fas fa-sign-out-alt"></i>
-          </div>
+          </a>
         </li>
       </ul>
     </nav>
 
-    <div class="user">
-      <i class="fas fa-solid fa-user"></i>
-      <i class="fas fa-sign-out-alt"></i>
+    <div class="nav-links" id="login-links">
+      <a href="pages/login.html">
+        <i class="fas fa-solid fa-user"></i>
+      </a>
+      <a href="pages/signup.html">
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -68,9 +74,9 @@
   <div class="music-container" id="music-container">
     <div class="music-info">
       <h4 id="title"></h4>
+      <span id="currTime"></span> / <span id="durTime"></span>
       <div class="progress-container" id="progress-container">
         <div class="progress" id="progress"></div>
-        <span id="currTime"></span> / <span id="durTime"></span>
       </div>
     </div>
 
@@ -95,9 +101,14 @@
     </div>
   </div>
 
+  <!--Theme Change (Dark/Light)-->
+  <div class="theme-button" id="modeToggle">
+    <i class="fas fa-solid fa-moon" id="toggle-button"></i>
+  </div>
+
   <!-- for footer -->
   <footer class="footer2">
-    <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
+    <p>Copyright © <span id="copyright-year"></span> Rights Reserved & Developed by Samrat Ghosh</p>
   </footer>
   <script>
     const hamburger = document.getElementById("hamburger");
@@ -108,6 +119,9 @@
     });
   </script>
   <script src="script.js"></script>
+
+  <!-- Copyright Year --- -->
+  <script src="./copyrightYear.js"></script>
 </body>
 
 </html>

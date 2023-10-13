@@ -8,6 +8,7 @@ body{
 .main{
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background-color: #DAFFFB;
     display: flex;
     justify-content: center;
@@ -15,7 +16,8 @@ body{
 }
 
 .container{
-    width: 32%;
+    max-width: 360px;
+    width: 100%;
     height: 82%;
     background-color: #fff;
     border-radius: 20px;
@@ -53,7 +55,7 @@ body{
 }
 
 input{
-    width: 90%;
+    width: 100%;
     height: 50px;
     outline: none;
     border: 1px solid #DAFFFB;
@@ -115,8 +117,9 @@ input{
 }
 
 button{
-    width: 5rem;
-    height: 2rem;
+    width: max-content;
+    padding-inline: 22px;
+    padding-block: 12px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -141,4 +144,10 @@ button:hover{
     font-size: 0.8rem;
     color: #176B87;
     text-decoration: none;
+}
+
+@media (min-width: 772px) {
+    .container {
+        max-width: 380px;;
+    }
 }

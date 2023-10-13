@@ -13,8 +13,8 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Perfect','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan',
-'Abar-Phire-Ele','Boba-Tunnel','Ei Sraabon','Apna-Bana-Le','Tere Hawaale','Ami shei manushta r nei'];;
+const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'Faded', 'Beche Thakar Gaan',
+  'Abar-Phire-Ele', 'Boba-Tunnel', 'Ei Sraabon', 'Apna-Bana-Le', 'Tere Hawaale', 'Ami shei manushta r nei'];
 // Keep track of song
 let songIndex = songs.length - 1;
 
@@ -233,6 +233,37 @@ audio.addEventListener('ended', () => {
 audio.addEventListener('timeupdate', DurTime);
 
 
+function songDurTime(songDuration) {
+  var sec_duration;
+
+  // Define minutes duration
+  let min_duration = (isNaN(songDuration) === true) ? '0' :
+    Math.floor(songDuration / 60);
+  min_duration = min_duration < 10 ? '0' + min_duration : min_duration;
+
+  // Function to calculate seconds duration
+  function get_sec_d(x) {
+    if (Math.floor(x) >= 60) {
+      for (var i = 1; i <= 60; i++) {
+        if (Math.floor(x) >= (60 * i) && Math.floor(x) < (60 * (i + 1))) {
+          sec_duration = Math.floor(x) - (60 * i);
+          sec_duration = sec_duration < 10 ? '0' + sec_duration : sec_duration;
+        }
+      }
+    } else {
+      sec_duration = (isNaN(songDuration) === true) ? '0' :
+        Math.floor(x);
+      sec_duration = sec_duration < 10 ? '0' + sec_duration : sec_duration;
+    }
+  }
+
+  // Call the function to calculate seconds duration
+  get_sec_d(songDuration);
+
+  // Return the formatted duration string (MM:SS)
+  return min_duration + ':' + sec_duration;
+}
+
 // Adding List Of Songs In "My Audio" Page
 let x = 1;
 for (let i in songs) {
@@ -256,9 +287,26 @@ for (let i in songs) {
   songname.className = 'song-name';
   songname.innerHTML = songs[i];
 
+  const songName = document.createElement('audio');
+  songName.src = `../music/${songs[i]}.mp3`;
+
+  let songduration = document.createElement('div');
+  songduration.className = 'song-duration';
+
+  // Wait for the audio to load before getting the duration
+  songName.addEventListener('loadedmetadata', function() {
+    console.log('loadedmetadata event triggered');
+    let songDuration = songName.duration;
+    songduration.innerHTML = songDurTime(songDuration);
+  });
+
+  // Load the audio to trigger the 'loadedmetadata' event
+  songName.load();
+
   layout.appendChild(songnumber);
   layout.appendChild(songimage);
   layout.appendChild(songname);
+  layout.appendChild(songduration);
 
   songList.appendChild(layout);
   x++;
@@ -269,5 +317,40 @@ document.addEventListener('visibilitychange', () => {
   // If the page becomes hidden, save the playback position
   if (document.visibilityState === 'hidden') {
     savePlaybackPosition();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const modeToggle = document.getElementById('modeToggle');
+
+  // Check the user's preference from local storage
+  const currentMode = localStorage.getItem('mode');
+  if (currentMode) {
+    body.classList.add(currentMode);
+    updateIcon(currentMode);
+  } else {
+    // Set default mode if not found in local storage
+    body.classList.add('light-mode');
+    updateIcon('light-mode');
+  }
+
+  // Toggle between light and dark mode
+  modeToggle.addEventListener('click', function () {
+    if (body.classList.contains('light-mode')) {
+      body.classList.replace('light-mode', 'dark-mode');
+      localStorage.setItem('mode', 'dark-mode');
+      updateIcon('dark-mode');
+    } else {
+      body.classList.replace('dark-mode', 'light-mode');
+      localStorage.setItem('mode', 'light-mode');
+      updateIcon('light-mode');
+    }
+  });
+
+  // Function to update the icon based on the current mode
+  function updateIcon(mode) {
+    const icon = mode === 'light-mode' ? 'fa-moon' : 'fa-sun';
+    modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
   }
 });
