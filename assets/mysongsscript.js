@@ -2,6 +2,7 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const likeBtn = document.getElementById('like');
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
@@ -14,8 +15,11 @@ const durTime = document.querySelector('#durTime');
 // Song titles
 const songs = ['Mere Naam Tu','Deva Deva','Alkananda','Kesariya','Perfect','Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide','Kisi Se Pyar Ho Jaye','Bhuter Raja Dilo Bor','faded', 'Beche Thakar Gaan',
 'Abar-Phire-Ele','Boba-Tunnel','Ei Sraabon','Apna-Bana-Le','Tere Hawaale','Ami shei manushta r nei'];;
-// Keep track of song 
+// Keep track of song
 let songIndex = songs.length - 1;
+
+//keep track of liked songs
+let likedSongs = [];
 
 // Load current song from localStorage
 function loadSongFromStorage() {
@@ -56,7 +60,7 @@ function playSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
   playBtn.querySelector('i.fas').classList.add('fa-pause');
-  
+
   audio.play();
 }
 
@@ -102,6 +106,12 @@ function nextSong() {
   loadSong(songs[songIndex]);
 
   playSong();
+}
+
+//like song
+function likeSong(){
+  likedSongs.push(songs[songIndex]);
+  console.log("likedSongs "+likedSongs);
 }
 
 // Update progress bar
@@ -194,7 +204,7 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-// Change volume of the Song 
+// Change volume of the Song
 const setVolume = (volume) => {
   audio.volume = volume
 }
@@ -202,6 +212,9 @@ const setVolume = (volume) => {
 // Change song
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+
+//like song
+likeBtn.addEventListener('click',likeSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);
