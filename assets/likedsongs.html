@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-  <link rel="stylesheet" href="mysongsstyle.css" />
+  <link rel="stylesheet" href="likedsongsstyle.css" />
 
   <title>Musica</title>
 </head>
@@ -23,12 +23,12 @@
             Home</a>
         </li>
         <li>
-          <a href="#">
+          <a href="./mysongs.html">
             <i class="fas fa-solid fa-star"></i>
             My Songs</a>
         </li>
         <li>
-          <a href="./likedsongs.html">
+          <a href="#">
             <i class="fas fa-solid fa-heart"></i>
             Liked Song</a>
         </li>
@@ -88,7 +88,6 @@
         <i class="fas fa-forward"></i>
       </button>
       <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
-      <div id="like" class="fas fa-solid fa-heart"></div>
     </div>
   </div>
 
@@ -120,7 +119,7 @@
       navContainer.classList.toggle("show-nav");
     });
   </script>
-  <script src="mysongsscript.js"></script>
+  <script src="likedsongscript.js"></script>
 </body>
 
 </html>
