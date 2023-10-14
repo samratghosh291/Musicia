@@ -392,7 +392,7 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     /* Song List style for smaller screen  */
-    .layout {
+    .layout{
         width: 80vw;
     }
 
@@ -562,12 +562,4 @@ body.dark-mode .layout-head:hover {
 body.dark-mode .nav-container {
     background: #1f1f1f;
     color: #ff0066;
-}
-
-#like {
-    content: "\f004";
-    margin-left: 24px;
-    /* size: 10px; */
-    font-size: 31px;
-    color: #cdc2d0;
 }

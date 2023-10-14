@@ -2,7 +2,6 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const likeBtn = document.getElementById('like');
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
@@ -15,14 +14,8 @@ const durTime = document.querySelector('#durTime');
 // Song titles
 const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'Faded', 'Beche Thakar Gaan',
   'Abar-Phire-Ele', 'Boba-Tunnel', 'Ei Sraabon', 'Apna-Bana-Le', 'Tere Hawaale', 'Ami shei manushta r nei'];
-// Keep track of song
+// Keep track of song 
 let songIndex = songs.length - 1;
-
-//keep track of song that is been played
-let songTracker = songs.length - 1;
-
-let likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
-
 
 // Load current song from localStorage
 function loadSongFromStorage() {
@@ -56,11 +49,6 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `../music/${song}.mp3`;
   cover.src = `../images/${song}.jpg`;
-  if(likedSongs.includes(song))
-  document.getElementById("like").style.color = "#fe8daa";
-  else
-  document.getElementById("like").style.color = "#cdc2d0";
-
 }
 
 // Play song
@@ -68,7 +56,7 @@ function playSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
   playBtn.querySelector('i.fas').classList.add('fa-pause');
-
+  
   audio.play();
 }
 
@@ -114,18 +102,6 @@ function nextSong() {
   loadSong(songs[songIndex]);
 
   playSong();
-}
-
-//like song
-function likeSong(){
-  if(!likedSongs.includes(songs[songTracker])){
-  likedSongs.push(songs[songTracker]);
-  document.getElementById("like").style.color = "#fe8daa";
-  }else{
-  likedSongs = likedSongs.filter(item => item !== songs[songTracker]);
-  document.getElementById("like").style.color = "#cdc2d0";
-  }
-  localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
 }
 
 // Update progress bar
@@ -218,7 +194,7 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-// Change volume of the Song
+// Change volume of the Song 
 const setVolume = (volume) => {
   audio.volume = volume
 }
@@ -226,9 +202,6 @@ const setVolume = (volume) => {
 // Change song
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
-
-//like song
-likeBtn.addEventListener('click',likeSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);
@@ -286,7 +259,6 @@ for (let i in songs) {
   layout.id = i;
   layout.addEventListener('click', () => {
     loadSong(songs[layout.id]);
-    songTracker = layout.id;
     playSong();
   });
 
