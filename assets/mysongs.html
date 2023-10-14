@@ -2,38 +2,50 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-  <link rel="stylesheet" href="mysongsstyle.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link rel="stylesheet" href="mysongsstyle.css" />
 
-  <title>Musica</title>
+    <title>Musica</title>
 </head>
 
 <body>
-  <!-- for header  -->
-  <header class="">
-    <div class="logo">MUSICA</div>
-    <nav class="nav-container">
-      <ul class="nav-links">
-        <li>
-          <a href="../index.html">
-            <i class="fas fa-home"></i>
-            Home</a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-solid fa-star"></i>
-            My Songs</a>
-        </li>
-        <li>
-          <a href="./likedsongs.html">
-            <i class="fas fa-solid fa-heart"></i>
-            Liked Song</a>
-        </li>
-        <li class="usr">
-          <div class="nav-links">
+    <!-- for header  -->
+    <header class="">
+        <div class="logo">MUSICA</div>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-home"></i>
+                        Home</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-star"></i>
+                        My Songs</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-heart"></i>
+                        Liked Song</a>
+                </li>
+                <li class="usr">
+                    <div class="nav-links">
+                      <a href="../pages/login.html">
+                        <i class="fas fa-solid fa-user"></i>
+                      </a>
+                      <a href="../pages/signup.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                      </a>
+                    </div>
+                  </li>
+            </ul>
+        </nav>
+
+        <div class="nav-links" id="login-links">
             <a href="../pages/login.html">
               <i class="fas fa-solid fa-user"></i>
             </a>
@@ -41,86 +53,72 @@
               <i class="fas fa-sign-out-alt"></i>
             </a>
           </div>
-        </li>
-      </ul>
-    </nav>
+      
+          <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+    </header>
 
-    <div class="nav-links" id="login-links">
-      <a href="../pages/login.html">
-        <i class="fas fa-solid fa-user"></i>
-      </a>
-      <a href="../pages/signup.html">
-        <i class="fas fa-sign-out-alt"></i>
-      </a>
+    
+    <div class="music-container" id="music-container">
+        <div class="music-info">
+            <h4 id="title"></h4>
+            <span id="currTime"></span> / <span id="durTime"></span>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+                
+            </div>
+        </div>
+
+        <audio src="music/ukulele.mp3" id="audio"></audio>
+
+        <div class="img-container">
+            <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
+        </div>
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+        </div>
     </div>
 
-    <div class="hamburger" id="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </header>
-
-
-  <div class="music-container" id="music-container">
-    <div class="music-info">
-      <h4 id="title"></h4>
-      <span id="currTime"></span> / <span id="durTime"></span>
-      <div class="progress-container" id="progress-container">
-        <div class="progress" id="progress"></div>
-
-      </div>
-    </div>
-
-    <audio src="music/ukulele.mp3" id="audio"></audio>
-
-    <div class="img-container">
-      <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
-    </div>
-    <div class="navigation">
-      <button id="prev" class="action-btn">
-        <i class="fas fa-backward"></i>
-      </button>
-      <button id="play" class="action-btn action-btn-big">
-        <i class="fas fa-play"></i>
-      </button>
-      <button id="next" class="action-btn">
-        <i class="fas fa-forward"></i>
-      </button>
-      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
-      <div id="like" class="fas fa-solid fa-heart"></div>
-    </div>
-  </div>
-
-  <section id="song-list">
-    <section class="layout layout-head">
-      <div class="song-number-head">#</div>
-      <div class="song-image-head"></div>
-      <div class="song-name-head">Song Name</div>
-      <div class="song-duration-head">--:--</div>
+    <section id="song-list">
+        <section class="layout layout-head">
+            <div class="song-number-head">#</div>
+            <div class="song-image-head"></div>
+            <div class="song-name-head">Song Name</div>
+            <div class="song-duration-head">--:--</div>
+        </section>
     </section>
-  </section>
 
-  <!--Theme Change (Dark/Light)-->
-  <div class="theme-button" id="modeToggle">
-    <i class="fas fa-solid fa-moon"></i>
-  </div>
+    <!--Theme Change (Dark/Light)-->
+    <div class="theme-button" id="modeToggle">
+        <i class="fas fa-solid fa-moon"></i>
+      </div>
 
-  <!-- for footer  -->
-  <footer class="footer2">
-    <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
-  </footer>
-  </footer>
+    <!-- for footer  -->
+    <footer class="footer2">
+        <p>Copyright © 2022 All Rights Reserved & Developed by Samrat Ghosh</p>
+    </footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navContainer = document.querySelector(".nav-container");
-
-    hamburger.addEventListener("click", () => {
-      navContainer.classList.toggle("show-nav");
-    });
-  </script>
-  <script src="mysongsscript.js"></script>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navContainer = document.querySelector(".nav-container");
+    
+        hamburger.addEventListener("click", () => {
+          navContainer.classList.toggle("show-nav");
+        });
+      </script>
+    <script src="mysongsscript.js"></script>
 </body>
 
 </html>
