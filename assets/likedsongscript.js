@@ -13,30 +13,23 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Mere Naam Tu', 'Deva Deva', 'Alkananda', 'Kesariya', 'Perfect', 'Prithibi Ta Naki Chhoto Hote Hote', 'Tum Se Hi', 'Ek Purono Masjide', 'Kisi Se Pyar Ho Jaye', 'Bhuter Raja Dilo Bor', 'Faded', 'Beche Thakar Gaan',
-  'Abar-Phire-Ele', 'Boba-Tunnel', 'Ei Sraabon', 'Apna-Bana-Le', 'Tere Hawaale', 'Ami shei manushta r nei'];
+let songs = JSON.parse(localStorage.getItem('likedSongs')) || ['Deva Deva'];
+if(songs.length==0){
+  songs = ['Deva Deva'];
+  localStorage.setItem('likedSongs', JSON.stringify(songs));
+}
 // Keep track of song
 let songIndex = songs.length - 1;
 
-//keep track of song that is been played
-let songTracker = songs.length - 1;
-
-let likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
-
 
 // Load current song from localStorage
-function loadSongFromStorage() {
-  const currentSong = localStorage.getItem('currentSong');
-
-  if (currentSong) {
-    const { song } = JSON.parse(currentSong);
-    loadSong(song);
+function loadFirstAvailableSong() {
+    loadSong(songs[0]);
     playSong();
-  }
 }
 
 // Initially load song details into DOM
-loadSongFromStorage();
+loadFirstAvailableSong();
 
 // Check if there is a stored songIndex and playback position in localStorage
 const savedIndex = localStorage.getItem('savedSongIndex');
@@ -56,11 +49,6 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `../music/${song}.mp3`;
   cover.src = `../images/${song}.jpg`;
-  if(likedSongs.includes(song))
-  document.getElementById("like").style.color = "#fe8daa";
-  else
-  document.getElementById("like").style.color = "#cdc2d0";
-
 }
 
 // Play song
@@ -116,17 +104,6 @@ function nextSong() {
   playSong();
 }
 
-//like song
-function likeSong(){
-  if(!likedSongs.includes(songs[songTracker])){
-  likedSongs.push(songs[songTracker]);
-  document.getElementById("like").style.color = "#fe8daa";
-  }else{
-  likedSongs = likedSongs.filter(item => item !== songs[songTracker]);
-  document.getElementById("like").style.color = "#cdc2d0";
-  }
-  localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
-}
 
 // Update progress bar
 function updateProgress(e) {
@@ -227,8 +204,6 @@ const setVolume = (volume) => {
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 
-//like song
-likeBtn.addEventListener('click',likeSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);
@@ -286,7 +261,6 @@ for (let i in songs) {
   layout.id = i;
   layout.addEventListener('click', () => {
     loadSong(songs[layout.id]);
-    songTracker = layout.id;
     playSong();
   });
 
@@ -310,7 +284,6 @@ for (let i in songs) {
 
   // Wait for the audio to load before getting the duration
   songName.addEventListener('loadedmetadata', function() {
-    console.log('loadedmetadata event triggered');
     let songDuration = songName.duration;
     songduration.innerHTML = songDurTime(songDuration);
   });
