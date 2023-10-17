@@ -77,6 +77,13 @@
     </div>
 
     <div class="music-container" id="music-container">
+        <!-- Previous Song -->
+      <div class="prev-song">
+              <p class="song-label">Previous Song</p>
+              <img src="images/previous.jpg" alt="Previous Song" class="song-image" />
+              <p class="song-name">Previous Song</p>
+      </div>
+
       <div class="music-info">
         <h4 id="title"></h4>
         <span id="currTime"></span> / <span id="durTime"></span>
@@ -110,6 +117,14 @@
           oninput="setVolume(this.value)"
         />
       </div>
+
+      <!-- Next Song -->
+      <div class="next-song">
+        <p class="song-label">Next Song</p>
+        <img src="images/next.jpg" alt="Next Song" class="song-image" />
+        <p class="song-name">Next Song</p>
+      </div>
+
     </div>
 
     <!--Theme Change (Dark/Light)-->

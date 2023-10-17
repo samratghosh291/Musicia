@@ -38,6 +38,7 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+  updatePrevNextSongs();
 }
 
 // Save current song to localStorage
@@ -99,6 +100,38 @@ function nextSong() {
   loadSong(songs[songIndex]);
 
   playSong();
+}
+
+function handlePrevSongClick() {
+  prevSong();
+}
+function handleNextSongClick() {
+  nextSong();
+}
+
+// Click event listeners to the previous and next song elements
+const prevSongElement = document.querySelector('.prev-song');
+const nextSongElement = document.querySelector('.next-song');
+
+prevSongElement.addEventListener('click', handlePrevSongClick);
+nextSongElement.addEventListener('click', handleNextSongClick);
+
+// Update previous and next songs
+function updatePrevNextSongs() {
+  const prevSongIndex = songIndex === 0 ? songs.length - 1 : songIndex - 1;
+  const nextSongIndex = songIndex === songs.length - 1 ? 0 : songIndex + 1;
+
+  const prevSongImage = document.querySelector('.prev-song .song-image');
+  const nextSongImage = document.querySelector('.next-song .song-image');
+
+  prevSongImage.src = `images/${songs[prevSongIndex]}.jpg`;
+  nextSongImage.src = `images/${songs[nextSongIndex]}.jpg`;
+
+  const prevSongName = document.querySelector('.prev-song .song-name');
+  const nextSongName = document.querySelector('.next-song .song-name');
+
+  prevSongName.innerText = songs[prevSongIndex];
+  nextSongName.innerText = songs[nextSongIndex];
 }
 
 // Update progress bar
