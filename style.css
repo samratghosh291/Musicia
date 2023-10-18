@@ -298,6 +298,69 @@ header .user {
   transform: rotate(-30deg);
 }
 
+/* Added CSS for previous and next song */
+.prev-song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5; /* Initial opacity */
+  transition: opacity 0.3s;
+  margin-right: 40px;
+}
+
+.next-song{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5; /* Initial opacity */
+  transition: opacity 0.3s;
+  margin-left: 40px;
+}
+
+.next-song:hover,
+.prev-song:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.next-song img,
+.prev-song img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 80px;
+  width: 80px;
+}
+
+.next-song p,
+.prev-song p {
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-mode .next-song p{
+  color: #ffffff;
+}
+
+.dark-mode  .prev-song p{
+  color: #ffffff;
+}
+
+.prev-song .song-label,
+.next-song .song-label {
+  text-align: center;
+  font-size: 1rem; 
+  margin-bottom: 10px;
+  color: #333; 
+}
+
+.dark-mode .prev-song .song-label,
+.dark-mode .next-song .song-label {
+  color: #ffffff;
+}
+
 footer {
   position: absolute;
   bottom: 0;
