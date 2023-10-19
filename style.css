@@ -1,8 +1,6 @@
-
-
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
 
 * {
   margin: 0;
@@ -22,12 +20,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
 }
 #timestamp {
-    font-size: 1.2em;
-    margin-top: 10px;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 header {
@@ -38,7 +36,15 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 80px;
-  background: rgba(252, 169, 169, 0.6);
+
+  background: linear-gradient(
+    to right,
+    rgba(252, 169, 169, 0.6),
+    rgba(255, 192, 192, 0.6),
+    rgba(255, 214, 214, 0.6),
+    rgba(255, 236, 236, 0.6)
+  );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0 30px;
 }
 
@@ -46,16 +52,33 @@ header .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: rgba(188, 29, 23, 0.779);
+}
+.contents {
+  position: relative;
+  padding: 35px 70px;
+  font-family: "Cinzel", serif;
+}
+.contents h3 {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.contents h3:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(188, 29, 23, 0.779);
+}
+
+.contents h3:nth-child(2) {
+  color: rgb(246, 165, 167);
+  animation: animate 2s ease-in-out infinite;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   list-style: none;
 }
 
@@ -64,13 +87,19 @@ header .logo {
   align-items: center;
   gap: 5px;
   text-decoration: none;
-  color: rgba(188, 29, 23, 0.779);
+
   font-size: 1.2rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
+.nav-links a {
+  transition: transform 0.2s, color 0.2s;
+}
+
 .nav-links a:hover {
-  text-decoration: underline;
+  transform: scale(1.2);
+  color: #fc526b;
 }
 
 header .user {
@@ -81,7 +110,7 @@ header .user {
   color: rgba(188, 29, 23, 0.779);
 }
 
-.usr{
+.usr {
   display: none;
   align-items: center;
   gap: 10px;
@@ -97,7 +126,7 @@ header .user {
 .content {
   position: relative;
   padding: 35px 140px;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
 }
 
 .content h2 {
@@ -149,7 +178,7 @@ header .user {
 }
 
 .tagline {
-  font-family: 'Marck Script', cursive;
+  font-family: "Marck Script", cursive;
   font-size: 20px;
   padding: 0 80px;
   color: rgba(188, 29, 23, 0.779);
@@ -172,7 +201,7 @@ header .user {
 }
 
 .img-container::after {
-  content: '';
+  content: "";
   /* background-color: #fff; */
   border-radius: 50%;
   position: absolute;
@@ -309,7 +338,7 @@ header .user {
   margin-right: 40px;
 }
 
-.next-song{
+.next-song {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -340,20 +369,20 @@ header .user {
   color: #333;
 }
 
-.dark-mode .next-song p{
+.dark-mode .next-song p {
   color: #ffffff;
 }
 
-.dark-mode  .prev-song p{
+.dark-mode .prev-song p {
   color: #ffffff;
 }
 
 .prev-song .song-label,
 .next-song .song-label {
   text-align: center;
-  font-size: 1rem; 
+  font-size: 1rem;
   margin-bottom: 10px;
-  color: #333; 
+  color: #333;
 }
 
 .dark-mode .prev-song .song-label,
@@ -365,8 +394,8 @@ footer {
   position: absolute;
   bottom: 0;
   text-align: center;
-  font-size: .85rem;
-  height: 50px;
+  font-size: 0.85rem;
+  height: 30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -374,18 +403,18 @@ footer {
   background: rgba(252, 169, 169, 0.6);
   color: rgba(188, 29, 23, 0.779);
 
-  .fl a{
+  .fl a {
     color: #e44b65;
   }
-  .fo a{
-    color:rgb(190, 13, 13);
+  .fo a {
+    color: rgb(190, 13, 13);
   }
-  .top p{
+  .top p {
     color: #b10f0f;
   }
 }
 
-input[type="range"]{
+input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
@@ -405,88 +434,88 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -12px;
   background-color: #fe8daa;
   height: 2rem;
-  width: 1rem;    
+  width: 1rem;
 }
 
 /* Mobile-first styles */
 @media (max-width: 768px) {
   /* Header styles for smaller screens */
   header {
-      align-items: center;
-      padding: 10px;
+    align-items: center;
+    padding: 10px;
   }
-  header .user{
+  header .user {
     display: none;
   }
-  .usr{
+  .usr {
     display: block !important;
   }
   .nav-links {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
-  #login-links{
+  #login-links {
     display: none;
   }
   /* Logo and tagline styles for smaller screens */
   .logo-content {
-      padding: 10px;
+    padding: 10px;
   }
 
   .content h2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .tagline {
-      font-size: 20px;
+    font-size: 20px;
   }
 
-  #timestamp{
+  #timestamp {
     font-size: 0.7rem;
   }
 
-  #currTime{
+  #currTime {
     font-size: 0.7rem;
   }
 
-  #durTime{
+  #durTime {
     font-size: 0.7rem;
   }
 
   /* Image container styles for smaller screens */
   .img-container {
-      width: 60px;
+    width: 60px;
   }
 
   .img-container img {
-      height: 60px;
+    height: 60px;
   }
-  
-  .music-container{
-      margin-top: 125px;
-      padding: 1rem 1rem 1rem 1rem;
+
+  .music-container {
+    margin-top: 125px;
+    padding: 1rem 1rem 1rem 1rem;
   }
 
   /* Navigation styles for smaller screens */
 
   .action-btn {
-      font-size: 16px;
-      padding: 8px;
-      margin: 0 10px;
+    font-size: 16px;
+    padding: 8px;
+    margin: 0 10px;
   }
 
   .action-btn.action-btn-big {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   /* Music info styles for smaller screens */
   .music-info {
-      padding: 10px;
+    padding: 10px;
   }
 
   /* Footer styles for smaller screens */
   footer {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
 
@@ -527,7 +556,7 @@ input[type="range"]::-webkit-slider-thumb {
 
   .nav-container.show-nav {
     display: flex;
-    max-height: 350px; 
+    max-height: 350px;
     padding-bottom: 1rem;
     transition: max-height 0.4s ease; /* Slide-down and slide-up transition */
   }
@@ -544,7 +573,7 @@ input[type="range"]::-webkit-slider-thumb {
 
   .nav-links a {
     font-size: 1.2rem;
-    color: rgba(188, 29, 23, 0.779); 
+    color: rgba(188, 29, 23, 0.779);
     text-decoration: none;
     padding: 10px 20px; /* Padding for each link */
     transition: background-color 1s ease; /* Smooth background color transition */
@@ -555,9 +584,9 @@ input[type="range"]::-webkit-slider-thumb {
     text-decoration: none;
   }
 }
-  /* Dark Theme */
+/* Dark Theme */
 body.dark-mode {
-  background: linear-gradient(135deg,#121212,#000000);
+  background: linear-gradient(135deg, #121212, #000000);
   color: #ffffff;
 }
 
@@ -620,10 +649,10 @@ body.dark-mode .theme-button i {
 
 body.dark-mode footer {
   background: #1f1f1f;
-  .fo a{
+  .fo a {
     color: rgba(188, 29, 23, 0.779);
   }
-  .fl a{
+  .fl a {
     color: white;
   }
 }
