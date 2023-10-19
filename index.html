@@ -13,6 +13,11 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/png" />
+    <!-- Linking BootStrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Linking of Fontawesome -->
+    <script src="https://kit.fontawesome.com/d40ef7d114.js" crossorigin="anonymous"></script>
     <title>Musica</title>
   </head>
 
@@ -134,10 +139,86 @@
 
     <!-- for footer -->
     <footer class="footer2">
-      <p>
-        Copyright © <span id="copyright-year"></span> Rights Reserved &
-        Developed by Samrat Ghosh
-      </p>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>COMPANY</p>
+            </div>
+            <div class="fl"><a href="https://github.com/samratghosh291/Musicia/blob/main/README.md" target="_blank">About Us</a></div>
+            <div class="fl"><a href="LICENSE" target="_blank">Terms &amp; Conditions</a></div>
+            <div class="fl"><a href="">Privacy Policy</a></div>
+            <div class="fl"><a href="https://github.com/samratghosh291/Musicia/issues" target="_blank">Oppotunities</a></div>
+        </div>
+        <div class="col text-left my-3 mx-2">
+          <div class="top">
+              <p>MY ACCOUNT</p>
+          </div>
+          <div class="fl"><a href="pages/login.html">Login</a>
+          </div>
+          <div class="fl"><a href="pages/signup.html">Sign Up</a>
+          </div>
+          <div class="fl"><a href="assets/mysongs.html">My Songs</a>
+          </div>
+      </div>
+
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>HELP</p>
+              </div>
+              <div class="fl">
+                  <a href="#">FAQ</a>
+              </div>
+              <div class="fl">
+                  <a href="#">Contact Us</a>
+              </div>
+            <div class="fl">
+                <a href="https://github.com/samratghosh291/Musicia/issues/new" target="_blank">Report Bugs</a>
+            </div>
+        </div>
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>OTHER</p>
+            </div>
+            <div class="fl"><a href="#">Term of Use</a>
+            </div>
+            <div class="fl"><a href="#">Security</a>
+            </div>
+            <div class="fl"><a href="#">Privacy</a>
+            </div>
+
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="follow">
+        <div class="row text-center mx-4">
+            <div class="col-12 top">
+                <p class="">FOLLOW US
+            </div>
+            <div class="fo col-2"><a href="https://www.instagram.com/piku_samrat/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+            <div class="fo col-2"><a href="https://github.com/samratghosh291/Musicia" target="_blank"><i
+                        class="fa-brands fa-github"></i>
+                    Github</a>
+            </div>
+            <div class="fo col-2"><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fpiku_samrat490" target="_blank"><i
+                        class="fa-brands fa-twitter"></i>
+                    Twitter</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.hackerrank.com/samratghosh490?hr_r=1" target="_blank"><i class="fa-brands fa-hackerrank"></i> HackerRank</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.linkedin.com/in/samrat%20ghosh"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.facebook.com/piku%20ghosh"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="terms text-center my-3">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> <span id="currentYear"></span> All Rights Reserved & Developed by Samrat Ghosh</p>
+    </div>
     </footer>
     <script>
       const hamburger = document.getElementById("hamburger");

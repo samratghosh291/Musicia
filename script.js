@@ -370,3 +370,8 @@ document.addEventListener("keydown", (e)=>{
 })
 
 // update (youtanimstar) end
+
+// Get the current year
+const currentYear = new Date().getFullYear();
+// Update the placeholder element with the current year
+document.getElementById('currentYear').innerText = currentYear;
