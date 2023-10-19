@@ -402,6 +402,16 @@ footer {
   justify-content: center;
   background: rgba(252, 169, 169, 0.6);
   color: rgba(188, 29, 23, 0.779);
+
+  .fl a {
+    color: #e44b65;
+  }
+  .fo a {
+    color: rgb(190, 13, 13);
+  }
+  .top p {
+    color: #b10f0f;
+  }
 }
 
 input[type="range"] {
@@ -639,6 +649,12 @@ body.dark-mode .theme-button i {
 
 body.dark-mode footer {
   background: #1f1f1f;
+  .fo a {
+    color: rgba(188, 29, 23, 0.779);
+  }
+  .fl a {
+    color: white;
+  }
 }
 
 body.dark-mode .nav-container {
