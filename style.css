@@ -228,6 +228,15 @@ header .user {
   margin: 0 20px;
 }
 
+.action-btn:hover{
+  color: pink;
+  transition-delay: 250;
+}
+
+.action-btn.action-btn-big:hover{
+  color: pink;
+}
+
 .action-btn.action-btn-big {
   color: #cdc2d0;
   font-size: 30px;
