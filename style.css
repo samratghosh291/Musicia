@@ -298,18 +298,91 @@ header .user {
   transform: rotate(-30deg);
 }
 
+/* Added CSS for previous and next song */
+.prev-song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5; /* Initial opacity */
+  transition: opacity 0.3s;
+  margin-right: 40px;
+}
+
+.next-song{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5; /* Initial opacity */
+  transition: opacity 0.3s;
+  margin-left: 40px;
+}
+
+.next-song:hover,
+.prev-song:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.next-song img,
+.prev-song img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 80px;
+  width: 80px;
+}
+
+.next-song p,
+.prev-song p {
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-mode .next-song p{
+  color: #ffffff;
+}
+
+.dark-mode  .prev-song p{
+  color: #ffffff;
+}
+
+.prev-song .song-label,
+.next-song .song-label {
+  text-align: center;
+  font-size: 1rem; 
+  margin-bottom: 10px;
+  color: #333; 
+}
+
+.dark-mode .prev-song .song-label,
+.dark-mode .next-song .song-label {
+  color: #ffffff;
+}
+
 footer {
   position: absolute;
   bottom: 0;
   text-align: center;
   font-size: .85rem;
-  height: 30px;
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(252, 169, 169, 0.6);
   color: rgba(188, 29, 23, 0.779);
+
+  .fl a{
+    color: #e44b65;
+  }
+  .fo a{
+    color:rgb(190, 13, 13);
+  }
+  .top p{
+    color: #b10f0f;
+  }
 }
 
 input[type="range"]{
@@ -547,6 +620,12 @@ body.dark-mode .theme-button i {
 
 body.dark-mode footer {
   background: #1f1f1f;
+  .fo a{
+    color: rgba(188, 29, 23, 0.779);
+  }
+  .fl a{
+    color: white;
+  }
 }
 
 body.dark-mode .nav-container {

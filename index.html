@@ -1,125 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <!-- Linking BootStrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Linking of Fontawesome -->
+    <script src="https://kit.fontawesome.com/d40ef7d114.js" crossorigin="anonymous"></script>
+    <title>Musica</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Musica</title>
-</head>
+  <body>
+    <!-- for header -->
+    <header class="">
+      <div class="logo">MUSICA</div>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              Home</a
+            >
+          </li>
+          <li>
+            <a href="./assets/mysongs.html">
+              <i class="fas fa-solid fa-star"></i>
+              My Songs</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-solid fa-heart"></i>
+              Liked Song</a
+            >
+          </li>
+          <li class="usr">
+            <a href="pages/login.html">
+              <i class="fas fa-solid fa-user"></i>
+            </a>
+            <a href="pages/signup.html">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-
-<body>
-  <!-- for header -->
-  <header class="">
-    <div class="logo">MUSICA</div>
-    <nav class="nav-container">
-      <ul class="nav-links">
-        <li>
-          <a href="#">
-            <i class="fas fa-home"></i>
-            Home</a>
-        </li>
-        <li>
-          <a href="./assets/mysongs.html">
-            <i class="fas fa-solid fa-star"></i>
-            My Songs</a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-solid fa-heart"></i>
-            Liked Song</a>
-        </li>
-        <li class="usr">
-          <a href="pages/login.html">
-            <i class="fas fa-solid fa-user"></i>
-          </a>
-          <a href="pages/signup.html">
-            <i class="fas fa-sign-out-alt"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="nav-links" id="login-links">
-      <a href="pages/login.html">
-        <i class="fas fa-solid fa-user"></i>
-      </a>
-      <a href="pages/signup.html">
-        <i class="fas fa-sign-out-alt"></i>
-      </a>
-    </div>
-
-    <div class="hamburger" id="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </header>
-
-  <!-- logo -->
-  <div class="logo-content">
-    <div class="content">
-      <h2>MUSICA!</h2>
-      <h2>MUSICA!</h2>
-    </div>
-    <h3 class="tagline">enjoy your day...</h3>
-  </div>
-
-  <div class="music-container" id="music-container">
-    <div class="music-info">
-      <h4 id="title"></h4>
-      <span id="currTime"></span> / <span id="durTime"></span>
-      <div class="progress-container" id="progress-container">
-        <div class="progress" id="progress"></div>
+      <div class="nav-links" id="login-links">
+        <a href="pages/login.html">
+          <i class="fas fa-solid fa-user"></i>
+        </a>
+        <a href="pages/signup.html">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
       </div>
+
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <!-- logo -->
+    <div class="logo-content">
+      <div class="content">
+        <h2>MUSICA!</h2>
+        <h2>MUSICA!</h2>
+      </div>
+      <h3 class="tagline">enjoy your day...</h3>
     </div>
 
-    <audio src="music/ukulele.mp3" id="audio"></audio>
+    <div class="music-container" id="music-container">
+        <!-- Previous Song -->
+      <div class="prev-song">
+              <p class="song-label">Previous Song</p>
+              <img src="images/previous.jpg" alt="Previous Song" class="song-image" />
+              <p class="song-name">Previous Song</p>
+      </div>
 
-    <div class="img-container">
-      <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
+      <div class="music-info">
+        <h4 id="title"></h4>
+        <span id="currTime"></span> / <span id="durTime"></span>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+
+      <audio src="music/ukulele.mp3" id="audio"></audio>
+
+      <div class="img-container">
+        <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
+      </div>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+        </button>
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          oninput="setVolume(this.value)"
+        />
+      </div>
+
+      <!-- Next Song -->
+      <div class="next-song">
+        <p class="song-label">Next Song</p>
+        <img src="images/next.jpg" alt="Next Song" class="song-image" />
+        <p class="song-name">Next Song</p>
+      </div>
+
     </div>
-    <div class="navigation">
-      <button id="prev" class="action-btn">
-        <i class="fas fa-backward"></i>
-      </button>
-      <button id="play" class="action-btn action-btn-big">
-        <i class="fas fa-play"></i>
-      </button>
-      <button id="next" class="action-btn">
-        <i class="fas fa-forward"></i>
-      </button>
-      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+
+    <!--Theme Change (Dark/Light)-->
+    <div class="theme-button" id="modeToggle">
+      <i class="fas fa-solid fa-moon" id="toggle-button"></i>
     </div>
-  </div>
 
-  <!--Theme Change (Dark/Light)-->
-  <div class="theme-button" id="modeToggle">
-    <i class="fas fa-solid fa-moon" id="toggle-button"></i>
-  </div>
+    <!-- for footer -->
+    <footer class="footer2">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>COMPANY</p>
+            </div>
+            <div class="fl"><a href="https://github.com/samratghosh291/Musicia/blob/main/README.md" target="_blank">About Us</a></div>
+            <div class="fl"><a href="LICENSE" target="_blank">Terms &amp; Conditions</a></div>
+            <div class="fl"><a href="">Privacy Policy</a></div>
+            <div class="fl"><a href="https://github.com/samratghosh291/Musicia/issues" target="_blank">Oppotunities</a></div>
+        </div>
+        <div class="col text-left my-3 mx-2">
+          <div class="top">
+              <p>MY ACCOUNT</p>
+          </div>
+          <div class="fl"><a href="pages/login.html">Login</a>
+          </div>
+          <div class="fl"><a href="pages/signup.html">Sign Up</a>
+          </div>
+          <div class="fl"><a href="assets/mysongs.html">My Songs</a>
+          </div>
+      </div>
 
-  <!-- for footer -->
-  <footer class="footer2">
-    <p>Copyright © <span id="copyright-year"></span> Rights Reserved & Developed by Samrat Ghosh</p>
-  </footer>
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navContainer = document.querySelector(".nav-container");
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>HELP</p>
+              </div>
+              <div class="fl">
+                  <a href="#">FAQ</a>
+              </div>
+              <div class="fl">
+                  <a href="#">Contact Us</a>
+              </div>
+            <div class="fl">
+                <a href="https://github.com/samratghosh291/Musicia/issues/new" target="_blank">Report Bugs</a>
+            </div>
+        </div>
+        <div class="col text-left my-3 mx-2">
+            <div class="top">
+                <p>OTHER</p>
+            </div>
+            <div class="fl"><a href="#">Term of Use</a>
+            </div>
+            <div class="fl"><a href="#">Security</a>
+            </div>
+            <div class="fl"><a href="#">Privacy</a>
+            </div>
 
-    hamburger.addEventListener("click", () => {
-      navContainer.classList.toggle("show-nav");
-    });
-  </script>
-  <script src="script.js"></script>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="follow">
+        <div class="row text-center mx-4">
+            <div class="col-12 top">
+                <p class="">FOLLOW US
+            </div>
+            <div class="fo col-2"><a href="https://www.instagram.com/piku_samrat/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+            <div class="fo col-2"><a href="https://github.com/samratghosh291/Musicia" target="_blank"><i
+                        class="fa-brands fa-github"></i>
+                    Github</a>
+            </div>
+            <div class="fo col-2"><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fpiku_samrat490" target="_blank"><i
+                        class="fa-brands fa-twitter"></i>
+                    Twitter</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.hackerrank.com/samratghosh490?hr_r=1" target="_blank"><i class="fa-brands fa-hackerrank"></i> HackerRank</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.linkedin.com/in/samrat%20ghosh"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+            </div>
+            <div class="fo col-2"><a href="https://www.facebook.com/piku%20ghosh"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            </div>
+            
+        </div>
+    </div>
 
-  <!-- Copyright Year --- -->
-  <script src="./copyrightYear.js"></script>
-</body>
+    <div class="terms text-center my-3">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> <span id="currentYear"></span> All Rights Reserved & Developed by Samrat Ghosh</p>
+    </div>
+    </footer>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navContainer = document.querySelector(".nav-container");
 
+      hamburger.addEventListener("click", () => {
+        navContainer.classList.toggle("show-nav");
+      });
+    </script>
+    <script src="script.js"></script>
+
+    <!-- Copyright Year --- -->
+    <script src="./copyrightYear.js"></script>
+  </body>
 </html>

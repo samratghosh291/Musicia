@@ -38,6 +38,7 @@ function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+  updatePrevNextSongs();
 }
 
 // Save current song to localStorage
@@ -99,6 +100,38 @@ function nextSong() {
   loadSong(songs[songIndex]);
 
   playSong();
+}
+
+function handlePrevSongClick() {
+  prevSong();
+}
+function handleNextSongClick() {
+  nextSong();
+}
+
+// Click event listeners to the previous and next song elements
+const prevSongElement = document.querySelector('.prev-song');
+const nextSongElement = document.querySelector('.next-song');
+
+prevSongElement.addEventListener('click', handlePrevSongClick);
+nextSongElement.addEventListener('click', handleNextSongClick);
+
+// Update previous and next songs
+function updatePrevNextSongs() {
+  const prevSongIndex = songIndex === 0 ? songs.length - 1 : songIndex - 1;
+  const nextSongIndex = songIndex === songs.length - 1 ? 0 : songIndex + 1;
+
+  const prevSongImage = document.querySelector('.prev-song .song-image');
+  const nextSongImage = document.querySelector('.next-song .song-image');
+
+  prevSongImage.src = `images/${songs[prevSongIndex]}.jpg`;
+  nextSongImage.src = `images/${songs[nextSongIndex]}.jpg`;
+
+  const prevSongName = document.querySelector('.prev-song .song-name');
+  const nextSongName = document.querySelector('.next-song .song-name');
+
+  prevSongName.innerText = songs[prevSongIndex];
+  nextSongName.innerText = songs[nextSongIndex];
 }
 
 // Update progress bar
@@ -180,16 +213,17 @@ function DurTime(e) {
 
 };
 
+// update (youtanimstar) start
 // Event listeners
-playBtn.addEventListener('click', () => {
-  const isPlaying = musicContainer.classList.contains('play');
-
-  if (isPlaying) {
-    pauseSong();
-  } else {
-    playSong();
-  }
-});
+// playBtn.addEventListener('click', () => {
+//   const isPlaying = musicContainer.classList.contains('play');
+//   if (isPlaying) {
+//     pauseSong();
+//   } else {
+//     playSong();
+//   }
+// });
+// update (youtanimstar) end
 
 // Change volume of the Song 
 const setVolume = (volume) => {
@@ -232,11 +266,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   playButton.addEventListener('click', function () {
     if (isPlaying == true) {
-      audio.pause();
+      // update (youtanimstar) start
+      // audio.pause();
+      pauseSong()
+      // update (youtanimstar) end
       isPlaying = false;
     }
     else {
-      audio.play();
+      // update (youtanimstar) start
+      // audio.play();
+      playSong()
+      // update (youtanimstar) end
       isPlaying = true;
     }
   });
@@ -291,3 +331,47 @@ document.addEventListener('DOMContentLoaded', function () {
     modeToggle.innerHTML = `<i class="fas fa-solid ${icon}"></i>`;
 }
 });
+
+// update (youtanimstar) start
+
+// Key press events
+
+document.addEventListener("keydown", (e)=>{
+  const isPlaying = musicContainer.classList.contains('play');
+  console.log(e.code);
+  // play or pause 
+  if(e.code === "Space")
+  {
+    const isPlayButton = playBtn.querySelector('i.fas').classList.contains("fa-play");
+    if (isPlaying && !isPlayButton) {
+      pauseSong();
+    } else {
+      playSong();
+    }
+  }
+  // Skip + 10 sec
+  if(e.code === "ArrowRight")
+  {
+    if(isPlaying)
+    {
+      
+      audio.currentTime +=10;
+    }
+  }
+  // Skip - 10 sec
+  if(e.code === "ArrowLeft")
+  {
+    if(isPlaying)
+    {
+      audio.currentTime -=10;
+    }
+  }
+  
+})
+
+// update (youtanimstar) end
+
+// Get the current year
+const currentYear = new Date().getFullYear();
+// Update the placeholder element with the current year
+document.getElementById('currentYear').innerText = currentYear;

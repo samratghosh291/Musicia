@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
     />
-    <title>Singup</title>
+    <title>Signup</title>
   </head>
   <body>
     <div class="main">
@@ -18,55 +18,59 @@
           <span>Sign Up</span>
         </div>
         <div class="input_container">
-          <div class="group">
-            <i class="fas fa-solid fa-user icon"></i>
-            <input class="input" type="text" placeholder="username" />
-          </div>
-          <div class="group">
-            <i class="fas fa-solid fa-envelope icon"></i>
-            <input class="input" type="email" placeholder="email" />
-          </div>
-          <div class="group">
-            <svg
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon"
-            >
-              <path
-                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-            <input class="input" type="password" placeholder="password" />
-          </div>
-          <div class="group">
-            <svg
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon"
-            >
-              <path
-                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-            <input
-              class="input"
-              type="password"
-              placeholder="confirm password"
-            />
-          </div>
+          <form id="signup_form">
+            <div class="group">
+              <i class="fas fa-solid fa-user icon"></i>
+              <input class="input" type="text" id="username" placeholder="username" />
+            </div>
+            <div class="group">
+              <i class="fas fa-solid fa-envelope icon"></i>
+              <input class="input" type="email" id="email" placeholder="email" />
+            </div>
+            <div class="group">
+              <svg
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+              >
+                <path
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+              <input class="input" type="password" id="password" placeholder="password" />
+            </div>
+            <div class="group">
+              <svg
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+              >
+                <path
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+              <input
+                class="input"
+                type="password"
+                id="confirm_password"
+                placeholder="confirm password"
+              />
+            </div>
+          </form>
         </div>
         <div>
           <button class="signup_btn">Sign Up</button>
         </div>
       </div>
     </div>
+    <script src="signup.js"></script>
   </body>
 </html>
