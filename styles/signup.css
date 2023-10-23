@@ -18,7 +18,7 @@ body{
 .container{
     max-width: 360px;
     width: 100%;
-    height: 90%;
+    height: 80%;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -151,4 +151,8 @@ button:hover{
     .container {
         max-width: 380px;;
     }
+}
+
+.container{
+    height: 90%;
 }
