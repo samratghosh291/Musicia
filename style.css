@@ -43,8 +43,10 @@ header {
 }
 
 header .logo {
-  display: flex;
+  display: inline-flex;
+  padding-top: 1.25rem;
   align-items: center;
+  position: absolute;
   gap: 10px;
   font-size: 20px;
   font-weight: 400;
@@ -53,16 +55,18 @@ header .logo {
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  float: inline-end;
   gap: 30px;
   list-style: none;
 }
+
 
 .nav-links a {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding-top: 1.25rem;
   text-decoration: none;
   color: rgba(188, 29, 23, 0.779);
   font-size: 1.2rem;
@@ -75,7 +79,7 @@ header .logo {
 
 header .user {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   gap: 10px;
   font-size: 20px;
   color: rgba(188, 29, 23, 0.779);
