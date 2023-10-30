@@ -377,6 +377,7 @@ footer {
   justify-content: center;
   background: rgba(252, 169, 169, 0.6);
   color: rgba(188, 29, 23, 0.779);
+  padding: 15px;
 
   .fl a{
     color: #e44b65;
@@ -388,6 +389,7 @@ footer {
     color: #b10f0f;
   }
 }
+
 
 input[type="range"]{
   -webkit-appearance: none;
